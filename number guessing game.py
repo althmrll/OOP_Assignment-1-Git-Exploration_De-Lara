@@ -61,5 +61,6 @@ def replay():
         print ("Ok, goodbye :'(")
         exit ()
     
-
+game_mechanics()
+start_game()
 
