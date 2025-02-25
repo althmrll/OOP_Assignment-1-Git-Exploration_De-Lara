@@ -14,9 +14,26 @@ def start_game():
         start=input("Press 'ENTER' tot start the game.")
     else: 
         start_game()
-        
+
 #Game itself
+    number=random.int(1,101)
+    guess=  0
+    guess = int(input("Enter your guess:"))
+    try:
+        if guess>number:
+            print ("You're thinking too high!") or ("Not quite, think lower!")
+
+        elif guess<number:
+            print ("That's too low!") or ("Nope, think bigger!")
+        
+        else:
+            print ("That's right! The number is {number}! You guessed it!")
+
+    except ValueError:
+        print ("You're silly, you need to guess a number!") or ("You can only type a number silly!")
+
+
 #Scoring
 #Replay (play again/ end game)
 
-game_mechanics()
+
