@@ -19,6 +19,7 @@ def start_game():
 def gameplay():
     number=random.int(1,101)
     guess=  0
+    print("score: {score}")
     guess = int(input("Enter your guess:"))
     try:
         if guess>number:
@@ -37,6 +38,8 @@ def gameplay():
 
 #Scoring
 def scoring():
+    score += 1
+    print ("Your current score: {score}")
     
 #Replay (play again/ end game)
 
