@@ -1,4 +1,5 @@
 import random
+round = 1
 score = 0
 
 #Listing game mechanics
@@ -10,20 +11,24 @@ def game_mechanics():
 #Pressing enter to start
 def start_game():
     start=input("Ready to start the game? Press 'ENTER' to start.")
-    if start!= "":
-        start=input("Press 'ENTER' to start the game.")
-    else: 
-        print ("\n----------")
-        gameplay()
+    while True:
+        if start == "":
+            print ("\n----------")
+            gameplay()
+        else: 
+            start=input("Press 'ENTER' to start the game.")
 
 #Game itself
 def gameplay():
     number=random.randint (1,101)
+    print ("\nROUND", round, ":\n\n")
+    print (number)
     guess=  0
     print("\nscore:", score,"\n")
+
     while guess!=number:
-        guess = int(input("Enter your guess:"))
         try:
+            guess = int(input("Enter your guess:"))
             if guess>number:
                 print ("You're thinking too high!!")
                 print ("\n----------\n")
@@ -31,43 +36,45 @@ def gameplay():
             elif guess<number:
                 print ("That's too low!")
                 print ("\n----------\n")
-        
-            elif guess==number:
-                print ("That's right! The number is", number, "!! You guessed it!")
+                
+            else:
+                print ("\n----------")
+                print ("\nThat's right! The number is", number, "!! You guessed it!\n")
                 scoring ()
                 replay  ()
+
         except ValueError:
-            print ("You're silly, you need to guess a number!") or ("You can only type a number silly!")
+            print ("You can only type a number silly!\n")
+            print ("----------\n")
+    
+       
+    
 
 
-#Scoring
+#Scoring & Round
 def scoring():
-    score = 0
-    score += 1
-    print ("Your current score:", score)
+    global score
+    global round
+    score= score + 1
+    round = round + 1
+    print ("Your current score:", score, "\n")
 
 #Replay (play again/ end game)
 def replay():
-    input ("That was fun! Want to play again?")
-    if input=="yes" or input=="Yes":
-        print ("Great! Here's another round.")
-        gameplay()
+        rp = input ("That was fun! Want to play again? (y/n):")
+        while True:
+            if rp=="y" or rp=="Y":
+                print ("Great! Here's another round.\n")
+                print ("\n----------\n")
+                gameplay()
     
-    elif input=="YES":
-        print ("Great! Here's another round.")
-        gameplay()
-    
-    elif input=="NO" or input=="no":
-        print ("Ok, goodbye :'(")
-        exit ()
-    
-    elif input == "No":
-        print ("Ok, goodbye :'(")
-        exit ()
-    
-    else:
-        input ("play again?")
-        replay_mechanics()
+            elif rp=="N" or rp=="n":
+                print ("Ok, goodbye :'(")
+                exit ()
+                
+            else:
+                rp= input("play again?(y/n):")
+            
     
 game_mechanics()
 start_game()
