@@ -13,9 +13,10 @@ def start_game():
     if start!= "":
         start=input("Press 'ENTER' tot start the game.")
     else: 
-        start_game()
+        gameplay()
 
 #Game itself
+def gameplay():
     number=random.int(1,101)
     guess=  0
     guess = int(input("Enter your guess:"))
@@ -28,12 +29,15 @@ def start_game():
         
         else:
             print ("That's right! The number is {number}! You guessed it!")
+            scoring ()
 
     except ValueError:
         print ("You're silly, you need to guess a number!") or ("You can only type a number silly!")
 
 
 #Scoring
+def scoring():
+    
 #Replay (play again/ end game)
 
 
