@@ -22,7 +22,6 @@ def start_game():
 def gameplay():
     number=random.randint (1,101)
     print ("\nROUND", round, ":\n\n")
-    print (number)
     guess=  0
     print("\nscore:", score,"\n")
 
@@ -47,10 +46,6 @@ def gameplay():
             print ("You can only type a number silly!\n")
             print ("----------\n")
     
-       
-    
-
-
 #Scoring & Round
 def scoring():
     global score
@@ -74,8 +69,6 @@ def replay():
                 
             else:
                 rp= input("play again?(y/n):")
-            
-    
+             
 game_mechanics()
 start_game()
-
