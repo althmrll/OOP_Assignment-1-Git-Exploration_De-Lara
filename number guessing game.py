@@ -17,7 +17,7 @@ def start_game():
 
 #Game itself
 def gameplay():
-    number=random.int(1,101)
+    number=random.randint (1,101)
     guess=  0
     print("score: {score}")
     guess = int(input("Enter your guess:"))
@@ -45,6 +45,9 @@ def scoring():
 #Replay (play again/ end game)
 def replay():
     r = input ("That was fun! Want to play again?")
+    replay_mechanics()
+
+def replay_mechanics():
     if r == "yes" or r == "Yes":
         print ("Great! Here's another round.")
         gameplay()
@@ -57,9 +60,13 @@ def replay():
         print ("Ok, goodbye :'(")
         exit ()
     
-    else r == "No":
+    elif r == "No":
         print ("Ok, goodbye :'(")
         exit ()
+    
+    else:
+        r = input ("play again?")
+        replay_mechanics()
     
 game_mechanics()
 start_game()
