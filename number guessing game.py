@@ -44,20 +44,20 @@ def scoring():
 
 #Replay (play again/ end game)
 def replay():
-    input ("That was fun! Want to play again?")
-    if input == "yes" or input == "Yes":
+    replay = input ("That was fun! Want to play again?")
+    if replay == "yes" or replay == "Yes":
         print ("Great! Here's another round.")
         gameplay()
     
-    elif input == "YES":
+    elif replay == "YES":
         print ("Great! Here's another round.")
         gameplay()
     
-    elif input == "NO" or input == "no":
+    elif replay == "NO" or replay == "no":
         print ("Ok, goodbye :'(")
         exit ()
     
-    else input == "No":
+    else replay == "No":
         print ("Ok, goodbye :'(")
         exit ()
     
