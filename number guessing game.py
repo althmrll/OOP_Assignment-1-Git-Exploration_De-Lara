@@ -31,6 +31,7 @@ def gameplay():
         else:
             print ("That's right! The number is {number}! You guessed it!")
             scoring ()
+            replay  ()
 
     except ValueError:
         print ("You're silly, you need to guess a number!") or ("You can only type a number silly!")
@@ -40,7 +41,25 @@ def gameplay():
 def scoring():
     score += 1
     print ("Your current score: {score}")
-    
+
 #Replay (play again/ end game)
+def replay():
+    input ("That was fun! Want to play again?")
+    if input == "yes" or input == "Yes":
+        print ("Great! Here's another round.")
+        gameplay()
+    
+    elif input == "YES":
+        print ("Great! Here's another round.")
+        gameplay()
+    
+    elif input == "NO" or input == "no":
+        print ("Ok, goodbye :'(")
+        exit ()
+    
+    else input == "No":
+        print ("Ok, goodbye :'(")
+        exit ()
+    
 
 
