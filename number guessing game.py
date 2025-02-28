@@ -20,7 +20,7 @@ def start_game():
 
 #Game itself
 def gameplay():
-    number=random.randint (1,101)
+    number=random.randint (1,100)
     print ("\nROUND", round, ":\n\n")
     guess=  0
     print("\nscore:", score,"\n")
